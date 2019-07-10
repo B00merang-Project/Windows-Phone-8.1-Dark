@@ -226,13 +226,13 @@ style "murrine-overlay-scrollbar" {
 }
 
 style "murrine-scale" = "murrine-thin" {
-	bg[NORMAL] = @bg_color
-	bg[ACTIVE] = @bg_color
+	bg[NORMAL] = @fg_color
+	bg[ACTIVE] = shade(0.2, @fg_color)
 	bg[SELECTED] = @selected_bg_color
 	bg[INSENSITIVE] = shade (0.95, @bg_color)
 
 	engine "murrine" {
-		roundness = 8
+		roundness = 0
 		gradient_shades = { 1.08, 1.08, 1.08, 1.08 }
 		border_shades = { 1.0, 1.0 }
 		trough_shades = { 1.08, 1.08 }
@@ -338,6 +338,9 @@ style "murrine-spinbutton" = "murrine-button" {
 }
 
 style "murrine-radiocheck" = "murrine-default" {
+	base[NORMAL] = shade(0.2, @fg_color)
+	base[INSENSITIVE] = shade(0.1, @fg_color)
+	
 	bg[SELECTED] = @fg_color_dark
 
 	text[NORMAL] = @checkradio_fg_color
